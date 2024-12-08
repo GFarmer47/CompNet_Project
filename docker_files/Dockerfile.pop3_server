@@ -1,0 +1,11 @@
+# Dockerfile.pop3_server
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY pop3_server.py /app/
+
+EXPOSE 110
+
+CMD ["python3", "pop3_server.py"]
+

@@ -1,0 +1,4 @@
+FROM namshi/smtp
+
+# Expose SMTP port
+EXPOSE 25

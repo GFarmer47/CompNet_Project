@@ -1,0 +1,18 @@
+FROM ubuntu:20.04
+
+RUN apt-get update && apt-get install -y vsftpd
+
+# Copy the vsftpd configuration
+COPY vsftpd.conf /etc/vsftpd.conf
+
+# Add a user and set up permissions
+RUN useradd -m -d /home/myuser myuser && \
+    echo "myuser:mypass" | chpasswd && \
+    chmod -R 755 /home/myuser && \
+    mkdir -p /var/run/vsftpd/empty /home/myuser/ftp && \
+    chmod -R 755 /var/run/vsftpd/empty /home/myuser/ftp
+
+EXPOSE 21
+EXPOSE 21000-21010
+
+CMD ["/usr/sbin/vsftpd", "/etc/vsftpd.conf"]

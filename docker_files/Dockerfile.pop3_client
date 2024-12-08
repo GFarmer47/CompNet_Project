@@ -1,0 +1,9 @@
+# Dockerfile.pop3_client
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY pop3_client.py /app/
+
+CMD ["python3", "pop3_client.py"]
+

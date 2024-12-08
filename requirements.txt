@@ -1,0 +1,12 @@
+
+
+```plaintext
+dnspython==2.6.1
+requests==2.32.0
+tk==0.1.0
+smtplib==0.1.0
+email==6.0.0
+socket==0.1.0
+threading==0.1.0
+subprocess==0.1.0
+os==0.1.0
